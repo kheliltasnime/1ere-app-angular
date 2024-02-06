@@ -1,18 +1,31 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { Component } from '@angular/core';
+import { HomeComponent } from './home/home.component';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
+@Component({
+  selector: 'app-root',
+  standalone: true,
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    HomeComponent,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  template: `
+    <main>
+      <header class="brand-name">
+        <img class="brand-logo" src="/assets/logo.png" alt="logo" aria-hidden="true">
+      </header>
+      <section class="content">
+        <app-home></app-home>
+      </section>
+    </main>
+  `,
+  styleUrls: ['./app.component.css'],
 })
-export class AppModule { }
+export class AppComponent {
+  title = 'homes';
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/
